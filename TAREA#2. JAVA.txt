@@ -1,0 +1,89 @@
+
+
+        // 16 TABLA DE MULTIPLICAR (Ciclo Para)
+        System.out.print("1. Ingrese número para la tabla: ");
+        int n1 = sc.nextInt();
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(n1 + " x " + i + " = " + (n1 * i));
+        }
+
+        // 17. SUMA NATURALES (Ciclo Para)
+        System.out.print("\n2. Sumar naturales hasta: ");
+        int n2 = sc.nextInt();
+        int sumaN = 0;
+        for (int i = 1; i <= n2; i++) sumaN += i;
+        System.out.println("Suma total: " + sumaN);
+
+        // 18. FACTORIAL (Ciclo Para)
+        System.out.print("\n3. Factorial de: ");
+        int n3 = sc.nextInt();
+        if (n3 < 0) System.out.println("No existe.");
+        else {
+            long fact = 1;
+            for (int i = 1; i <= n3; i++) fact *= i;
+            System.out.println("Resultado: " + fact);
+        }
+
+        // 19 FIBONACCI (Ciclo Para)
+        System.out.print("\n4. Cuántos números de Fibonacci: ");
+        int n4 = sc.nextInt();
+        int a = 0, b = 1;
+        for (int i = 0; i < n4; i++) {
+            System.out.print(a + " ");
+            int sig = a + b; a = b; b = sig;
+        }
+        System.out.println();
+
+        // 20. ADIVINAR COLOR (Ciclo Para)
+        String[] colores = {"rojo", "verde", "azul", "amarillo", "negro", "blanco", "gris", "rosa", "cafe", "morado"};
+        String secreto = colores[2]; // azul
+        System.out.println("\n5. Adivina el color (10 intentos):");
+        for (int i = 1; i <= 10; i++) {
+            System.out.print("Intento " + i + ": ");
+            if (sc.next().equalsIgnoreCase(secreto)) {
+                System.out.println("¡Adivinaste!"); break;
+            }
+        }
+
+        // 21.PARES 1-100 (Ciclo Para)
+        System.out.println("\n6. Números pares del 1 al 100:");
+        for (int i = 2; i <= 100; i += 2) System.out.print(i + " ");
+        System.out.println();
+
+        // 22. SUMA DÍGITOS (Ciclo Mientras)
+        System.out.print("\n7. Número para sumar sus dígitos: ");
+        int n7 = sc.nextInt();
+        int sumaD = 0;
+        while (n7 > 0) {
+            sumaD += n7 % 10;
+            n7 /= 10;
+        }
+        System.out.println("Suma: " + sumaD);
+
+        // 23 PRIMO (Ciclo Para)
+        System.out.print("\n8. Verificar si es primo: ");
+        int n8 = sc.nextInt();
+        boolean esPrimo = n8 > 1;
+        for (int i = 2; i <= Math.sqrt(n8); i++) {
+            if (n8 % i == 0) { esPrimo = false; break; }
+        }
+        System.out.println(n8 + (esPrimo ? " es primo." : " no es primo."));
+
+        // 24. TRIÁNGULO (Ciclo Para anidado)
+        System.out.print("\n9. Altura del triángulo: ");
+        int n9 = sc.nextInt();
+        for (int i = 1; i <= n9; i++) {
+            for (int j = 1; j <= i; j++) System.out.print("*");
+            System.out.println();
+        }
+
+        // 25. POTENCIA (Ciclo Para)
+        System.out.print("\n10. Base y exponente (ej: 2 3): ");
+        int base = sc.nextInt(), exp = sc.nextInt();
+        long resP = 1;
+        for (int i = 0; i < exp; i++) resP *= base;
+        System.out.println("Resultado: " + resP);
+        
+        sc.close();
+    }
+}
