@@ -1,0 +1,130 @@
+
+
+        // 1. TABLA DE MULTIPLICAR
+        System.out.print("1. ¿De qué número quieres la tabla?: ");
+        int tablaNum = leer.nextInt();
+        int c1 = 1; // Empezamos en 1
+        while (c1 <= 10) {
+            System.out.println(tablaNum + " x " + c1 + " = " + (tablaNum * c1));
+            c1 = c1 + 1; // Aumentamos el contador
+        }
+
+        // 2. SUMA HASTA N
+        System.out.print("\n2. ¿Hasta qué número quieres sumar?: ");
+        int limiteSuma = leer.nextInt();
+        int sumaTotal = 0;
+        int c2 = 1;
+        while (c2 <= limiteSuma) {
+            sumaTotal = sumaTotal + c2;
+            c2 = c2 + 1;
+        }
+        System.out.println("La suma de todos es: " + sumaTotal);
+
+        // 3. FACTORIAL
+        System.out.print("\n3. Dime un número para el factorial: ");
+        int nFact = leer.nextInt();
+        if (nFact < 0) {
+            System.out.println("No hay de negativos.");
+        } else {
+            long resultadoFact = 1;
+            int c3 = 1;
+            while (c3 <= nFact) {
+                resultadoFact = resultadoFact * c3;
+                c3 = c3 + 1;
+            }
+            System.out.println("El factorial es: " + resultadoFact);
+        }
+
+        // 4. FIBONACCI
+        System.out.print("\n4. ¿Cuántos números de Fibonacci quieres?: ");
+        int nFibo = leer.nextInt();
+        int a = 0, b = 1;
+        int c4 = 0;
+        while (c4 < nFibo) {
+            System.out.print(a + " ");
+            int auxiliar = a + b;
+            a = b;
+            b = auxiliar;
+            c4 = c4 + 1;
+        }
+        System.out.println();
+
+        // 5. ADIVINAR COLOR (Simplificado)
+        String secreto = "azul";
+        int intentos = 1;
+        System.out.println("\n5. Adivina el color (tienes 10 intentos):");
+        while (intentos <= 10) {
+            System.out.print("Intento " + intentos + ": ");
+            String respuesta = leer.next();
+            if (respuesta.equals(secreto)) {
+                System.out.println("¡Ganaste!");
+                intentos = 11; // Esto hace que la condición del while ya no se cumpla
+            } else {
+                System.out.println("Sigue intentando...");
+                intentos = intentos + 1;
+            }
+        }
+
+        // 6. NÚMEROS PARES (1 al 100)
+        System.out.println("\n6. Mostrando números pares:");
+        int c6 = 2;
+        while (c6 <= 100) {
+            System.out.print(c6 + " ");
+            c6 = c6 + 2; // Saltamos de 2 en 2
+        }
+        System.out.println();
+
+        // 7. SUMA DE DÍGITOS
+        System.out.print("\n7. Escribe un número largo: ");
+        int n7 = leer.nextInt();
+        int sumaDigitos = 0;
+        while (n7 > 0) {
+            int ultimoDigito = n7 % 10;
+            sumaDigitos = sumaDigitos + ultimoDigito;
+            n7 = n7 / 10;
+        }
+        System.out.println("La suma de sus dígitos es: " + sumaDigitos);
+
+        // 8. ¿ES PRIMO?
+        System.out.print("\n8. ¿Qué número quieres revisar si es primo?: ");
+        int n8 = leer.nextInt();
+        int divisor = 2;
+        boolean esPrimo = true;
+        if (n8 < 2) esPrimo = false;
+        while (divisor < n8) {
+            if (n8 % divisor == 0) {
+                esPrimo = false;
+            }
+            divisor = divisor + 1;
+        }
+        System.out.println("¿Es primo?: " + esPrimo);
+
+        // 9. TRIÁNGULO DE ASTERISCOS
+        System.out.print("\n9. ¿De cuántos pisos quieres el triángulo?: ");
+        int pisos = leer.nextInt();
+        int filaActual = 1;
+        while (filaActual <= pisos) {
+            int asteriscos = 1;
+            while (asteriscos <= filaActual) {
+                System.out.print("*");
+                asteriscos = asteriscos + 1;
+            }
+            System.out.println();
+            filaActual = filaActual + 1;
+        }
+
+        // 10. POTENCIA (Sin usar Math.pow)
+        System.out.print("\n10. Dime la base y luego el exponente: ");
+        int base = leer.nextInt();
+        int exp = leer.nextInt();
+        long potenciaTotal = 1;
+        int c10 = 1;
+        while (c10 <= exp) {
+            potenciaTotal = potenciaTotal * base;
+            c10 = c10 + 1;
+        }
+        System.out.println("Resultado de la potencia: " + potenciaTotal);
+
+        leer.close();
+    }
+}
